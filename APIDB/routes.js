@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const { OrganizationCalculation, Contact, User, Company, ESGmetric, CompanyESG, Report, Action, Role, Permission, ExcelData, Boundary } = require('./models');
 const router = express.Router();
-const secret = 'your_jwt_secret';
+const secret = process.env.JWT_SECRET || 'your_jwt_secret';
 const multer =require('multer');
 const XLSX = require('xlsx');
 const upload = multer({ dest: 'uploads/' });
@@ -78,14 +78,14 @@ router.post('/signup', async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'sfmpyt04@gmail.com', // Your Gmail address
-        pass: 'faix dltd qecg sjyu', // Your 16-character App password
+        user: process.env.EMAIL_USER, // From environment variable
+        pass: process.env.EMAIL_PASSWORD, // From environment variable
       },
     });
 
     // Email options
     let mailOptions = {
-      from: 'sfmpyt04@gmail.com',
+      from: process.env.EMAIL_USER,
       to: email, // Send to the registered user's email
       subject: 'Welcome to SFMPY!',
       html: `

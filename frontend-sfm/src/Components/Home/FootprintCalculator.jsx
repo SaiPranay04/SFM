@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../../lib/navigation';
 import axios from 'axios';
 import { toast } from '../../utils/toast';
 import { FaLeaf, FaIndustry, FaBuilding, FaCar, FaPlane, FaTrain, FaLaptop } from 'react-icons/fa';

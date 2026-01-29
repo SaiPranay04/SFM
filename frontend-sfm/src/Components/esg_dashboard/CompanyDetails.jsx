@@ -1,10 +1,11 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from '../../lib/navigation';
 import axios from 'axios';
 import { FaBuilding, FaIndustry, FaGlobe, FaFileAlt } from 'react-icons/fa';
 
-const CompanyDetails = () => {
-  const { companyID } = useParams();
+const CompanyDetails = ({ companyID }) => {
   const navigate = useNavigate();
   const [companyDetails, setCompanyDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

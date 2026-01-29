@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '../../lib/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBuilding, faChartLine, faFileAlt, faUsers, faShieldAlt, faUpload, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FaLeaf } from 'react-icons/fa';
@@ -57,7 +59,7 @@ const Sidebar = () => {
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
-                to={item.path}
+                href={item.path}
                 onClick={() => handleItemClick(item.name)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                   activeItem === item.name

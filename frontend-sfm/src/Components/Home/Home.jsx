@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../lib/navigation';
 import backgroundImage from '../../Assets/wallpaper.jpg';
 import Featureimg from '../../Assets/Statistics investment icon.jpg';
 import Reportimg from '../../Assets/Report Icon.jpg';
